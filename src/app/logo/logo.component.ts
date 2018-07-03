@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {FileUploader} from "ng2-file-upload";
+
+const URL = '';
 
 @Component({
   selector: 'app-logo',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
+
+  private files: Array<File> = [];
 
   ngOnInit() {
+  }
+
+  onFileChanged(e) {
+    console.log(e);
+
+    for (let i in e.target.files) {
+      this.files.push(e.target.files[i]);
+    }
+  }
+
+  navigateTo(url) {
+    this.router.navigate(['/' + url]);
   }
 
 }

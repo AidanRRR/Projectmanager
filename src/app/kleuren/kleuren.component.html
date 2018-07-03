@@ -7,28 +7,26 @@
         </div>
         <div class="column w-col w-col-7">
           <div class="div-block">
-            <div class="text-block nav">Project</div>
-            <div class="text-block nav">Logo</div>
-            <div class="text-block nav active">Kleuren</div>
-            <div class="text-block nav">Fonts</div>
+            <div (click)="navigateTo('project')" class="text-block nav">Project</div>
+            <div (click)="navigateTo('logo')" class="text-block nav">Logo</div>
+            <div (click)="navigateTo('kleuren')" class="text-block nav active">Kleuren</div>
+            <div (click)="navigateTo('fonts')" class="text-block nav">Fonts</div>
           </div>
         </div>
       </div>
     </div>
     <div class="div-block-3 colorbox">
-      <div class="div-block-4 color1">
-        <div class="text-block-4 color-info">#BA2D0B</div>
-        <div class="text-block-4 color-info-text">Red sheen</div>
+
+      <div *ngFor="let color of colors">
+        <div class="color-block" [style.backgroundColor]="color.code">
+          <label>
+            <input (change)="updateColor($event.target.value, color)" class="color-input" type="text" value={{color.code}} />
+          </label>
+        </div>
       </div>
-      <div class="div-block-4 color2"></div>
-      <div class="div-block-4 color3"></div>
-      <div class="div-block-4 color4"></div>
-      <div class="div-block-4 color5"></div>
-      <div class="div-block-4">
-        <a href="#" class="link add-color w-button">+
-          <br>
-        </a>
-      </div>
+
+      <a (click)="addColor()" class="link w-button">+
+      </a>
     </div>
   </div>
 </div>

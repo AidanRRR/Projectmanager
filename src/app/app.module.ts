@@ -7,8 +7,10 @@ import { FontsComponent } from './fonts/fonts.component';
 import { LogoComponent } from './logo/logo.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ProjectComponent } from './project/project.component';
 
 const appRoutes: Routes = [
+  { path: 'project', component: ProjectComponent },
   { path: 'fonts', component: FontsComponent },
   { path: 'kleuren', component: KleurenComponent },
   { path: 'logo', component: LogoComponent },
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     KleurenComponent,
     FontsComponent,
-    LogoComponent
+    LogoComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

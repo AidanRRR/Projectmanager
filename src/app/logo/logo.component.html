@@ -7,16 +7,23 @@
         </div>
         <div class="column w-col w-col-7">
           <div class="div-block">
-            <div class="text-block nav">Project</div>
-            <div class="text-block nav active">Logo</div>
-            <div class="text-block nav">Kleuren</div>
-            <div class="text-block nav">Fonts</div>
+            <div (click)="navigateTo('project')" class="text-block nav">Project</div>
+            <div (click)="navigateTo('logo')" class="text-block nav active">Logo</div>
+            <div (click)="navigateTo('kleuren')" class="text-block nav">Kleuren</div>
+            <div (click)="navigateTo('fonts')" class="text-block nav">Fonts</div>
           </div>
         </div>
       </div>
     </div>
     <div class="div-block-3 w-clearfix">
-      <a href="#" class="link w-button">+</a>
+      <div class="file-list" *ngFor="let file of files">
+        {{file.name}}
+      </div>
+      <input
+        style="display: none"
+        type="file" (change)="onFileChanged($event)"
+        #fileInput multiple>
+        <a (click)="fileInput.click()" class="link w-button">+</a>
     </div>
   </div>
 </div>

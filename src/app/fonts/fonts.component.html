@@ -7,27 +7,20 @@
         </div>
         <div class="column w-col w-col-7">
           <div class="div-block">
-            <div class="text-block nav">Project</div>
-            <div class="text-block nav">Logo</div>
-            <div class="text-block nav">Kleuren</div>
-            <div class="text-block nav active">Fonts</div>
+            <div (click)="navigateTo('project')" class="text-block nav">Project</div>
+            <div (click)="navigateTo('logo')" class="text-block nav">Logo</div>
+            <div (click)="navigateTo('kleuren')" class="text-block nav">Kleuren</div>
+            <div (click)="navigateTo('fonts')" class="text-block nav active">Fonts</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="div-block-3 colorbox">
-      <div class="div-block-4 color1">
-        <div class="text-block-4 color-info">#BA2D0B</div>
-        <div class="text-block-4 color-info-text">Red sheen</div>
-      </div>
-      <div class="div-block-4 color2"></div>
-      <div class="div-block-4 color3"></div>
-      <div class="div-block-4 color4"></div>
-      <div class="div-block-4 color5"></div>
-      <div class="div-block-4">
-        <a href="#" class="link add-color w-button">+
-          <br>
-        </a>
+    <div class="div-block-3 w-clearfix">
+      <div class="w-form">
+        <div class="text-block-2">Hoofdlettertype</div>
+        <input type="text" class="text-field bordered w-input" maxlength="256" name="name" data-name="Name" id="hoofdlettertype">
+        <div class="text-block-2">Sublettertype</div>
+        <input type="text" class="text-field bordered w-input" maxlength="256" name="name" data-name="Name" id="sublettertype">
       </div>
     </div>
   </div>
