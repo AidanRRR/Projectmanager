@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  googleFontApiKey: 'AIzaSyC5cPmzC3dYawkWHxE7ulEJqukzJB5USBs',
+  typekitApiKey: 'EgEa2c1tlm'
 };
 
 /*

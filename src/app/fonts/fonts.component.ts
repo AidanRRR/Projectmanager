@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {FontService} from "../services/fonts.service";
 
 @Component({
   selector: 'app-fonts',
@@ -8,9 +9,12 @@ import {Router} from "@angular/router";
 })
 export class FontsComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private fontService: FontService) {}
 
   ngOnInit() {
+    this.fontService.getGoogleFonts().subscribe((res) => {
+      console.log(res.json());
+    })
   }
 
   navigateTo(url) {
