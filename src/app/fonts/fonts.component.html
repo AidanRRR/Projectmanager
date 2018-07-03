@@ -18,9 +18,21 @@
     <div class="div-block-3 w-clearfix">
       <div class="w-form">
         <div class="text-block-2">Hoofdlettertype</div>
-        <input type="text" class="text-field bordered w-input" maxlength="256" name="name" data-name="Name" id="hoofdlettertype">
+        <div class="selectbox">
+          <ng-select [items]="fonts"
+                     bindLabel="name"
+                     bindValue="id"
+                     [(ngModel)]="selectedMainFont">
+          </ng-select>
+        </div>
         <div class="text-block-2">Sublettertype</div>
-        <input type="text" class="text-field bordered w-input" maxlength="256" name="name" data-name="Name" id="sublettertype">
+        <div class="selectbox">
+          <ng-select [items]="fonts"
+                     bindLabel="name"
+                     bindValue="id"
+                     [(ngModel)]="selectedSubFont">
+          </ng-select>
+        </div>
       </div>
     </div>
   </div>

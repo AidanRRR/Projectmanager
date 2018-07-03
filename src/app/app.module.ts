@@ -8,12 +8,16 @@ import { LogoComponent } from './logo/logo.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
+import {HttpClientModule} from '@angular/common/http';
+
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: 'project', component: ProjectComponent },
-  { path: 'fonts', component: FontsComponent },
-  { path: 'kleuren', component: KleurenComponent },
-  { path: 'logo', component: LogoComponent },
+  { path: 'project/:id', component: ProjectComponent },
+  { path: 'project/:id/fonts', component: FontsComponent },
+  { path: 'project/:id/kleuren', component: KleurenComponent },
+  { path: 'project/:id/logo', component: LogoComponent },
 ];
 
 @NgModule({
@@ -26,10 +30,13 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
-    )
+    ),
+    NgSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

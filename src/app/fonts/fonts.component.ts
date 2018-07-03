@@ -11,10 +11,15 @@ export class FontsComponent implements OnInit {
 
   constructor(private router: Router, private fontService: FontService) {}
 
+  public fonts: Array<any> = [];
+  public selectedMainFont: any;
+  public selectedSubFont: any;
+
+
   ngOnInit() {
     this.fontService.getGoogleFonts().subscribe((res) => {
-      console.log(res.json());
-    })
+      this.fonts = res.items.map((item) => item.family);
+    });
   }
 
   navigateTo(url) {
