@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import {AppStateModule} from './ngrx/store.module';
 
 const appRoutes: Routes = [
   { path: 'project/:id', component: ProjectComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    AppStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

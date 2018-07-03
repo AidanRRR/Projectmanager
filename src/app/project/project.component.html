@@ -16,11 +16,11 @@
       </div>
     </div>
     <div class="div-block-3 w-clearfix">
-      <div class="w-form">
+      <div class="w-form" *ngIf="project | async as p">
         <div class="text-block-2">Naam project</div>
-        <input type="text" class="text-field bordered w-input" maxlength="256" name="name" data-name="Name" id="name">
+        <input (change)="save()" [(ngModel)]="name" value="{{ p.currentProject.name }}" type="text" class="text-field bordered w-input" maxlength="256">
         <div class="text-block-2">Omschrijving project</div>
-        <textarea id="Omschrijving" name="Omschrijving" data-name="Omschrijving" maxlength="5000" class="text-field multiline bordered w-input"></textarea>
+        <textarea (change)="save()" [(ngModel)]="beschrijving" value="{{ p.currentProject.beschrijving }}" id="Omschrijving" name="Omschrijving" maxlength="5000" class="text-field multiline bordered w-input"></textarea>
       </div>
     </div>
   </div>
